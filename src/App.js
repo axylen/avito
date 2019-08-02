@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from 'Components/Header/Header';
-import ProductList from 'Containers/ProductList/ProductList';
+import ProductsDataProvider from 'Containers/ProductsDataProvider/ProductsDataProvider';
 
 function App() {
+  const [filter, setFilter] = useState({
+    category: undefined,
+    minPrice: undefined,
+    maxPrice: undefined,
+    favoritesOnly: false,
+  });
+
   return (
     <>
       <Header />
-      
-      <ProductList />
+
+      <ProductsDataProvider filter={filter} />
     </>
   );
 }
