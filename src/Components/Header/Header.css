@@ -8,6 +8,14 @@
   background-color: var(--color-header);
 }
 
+@supports (backdrop-filter: blur(0)) {
+  .header {
+    background-color: var(--color-header--transparent);
+
+    backdrop-filter: blur(30px);
+  }
+}
+
 .header__container {
   display: flex;
   align-items: center;
@@ -36,7 +44,7 @@
   height: 20px;
   margin-right: 10px;
 
-  opacity: .5;
+  opacity: 0.5;
 
   fill: currentColor;
 }

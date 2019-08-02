@@ -1,5 +1,6 @@
 :root {
   --color-text: #333;
   --color-header: #f0f3f5;
+  --color-header--transparent: rgba(240, 243, 245, .7);
   --color-primary: #2196f3;
 }
