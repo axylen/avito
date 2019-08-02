@@ -1,0 +1,41 @@
+.header {
+  position: sticky;
+  top: 0;
+
+  height: 80px;
+
+  background-color: var(--color-header);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 15px 20px;
+}
+
+.header__avito-icon {
+  width: 177px;
+  height: 100%;
+}
+
+.header__favorites {
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+}
+
+.header__heart-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  opacity: .5;
+
+  fill: currentColor;
+}
