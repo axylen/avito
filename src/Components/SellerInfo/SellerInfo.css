@@ -1,0 +1,38 @@
+.seller {
+  display: flex;
+  align-items: center;
+
+  margin: auto 0 10px;
+}
+
+.seller__rating {
+  line-height: 37px;
+
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+  margin: 0;
+
+  text-align: center;
+
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-left: 10px;
+}
+
+.seller-info__company {
+  margin: 0;
+
+  opacity: .5;
+}
+.seller-info__name {
+  margin: 0;
+}
