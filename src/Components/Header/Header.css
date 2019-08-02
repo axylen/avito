@@ -1,5 +1,6 @@
 .header {
   position: sticky;
+  z-index: 100;
   top: 0;
 
   height: 80px;
@@ -12,14 +13,14 @@
   align-items: center;
   justify-content: space-between;
 
-  max-width: 900px;
+  max-width: 1000px;
   height: 100%;
   margin: 0 auto;
   padding: 15px 20px;
 }
 
 .header__avito-icon {
-  width: 177px;
+  width: 157px;
   height: 100%;
 }
 
