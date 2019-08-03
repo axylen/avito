@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header favoritesOnly={filter.favoritesOnly} setFilter={setFilter} />
 
       <ProductsDataProvider filter={filter} />
     </>

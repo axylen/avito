@@ -39,7 +39,7 @@
 .product__heart-icon--active {
   color: rgba(255, 255, 255, .3);
 
-  fill: #e74c3c;
+  fill: var(--color-red);
 }
 
 .product__images-count {
