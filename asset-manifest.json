@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/avito/static/css/main.eb020a0b.chunk.css",
-    "main.js": "/avito/static/js/main.269a511b.chunk.js",
-    "main.js.map": "/avito/static/js/main.269a511b.chunk.js.map",
+    "main.js": "/avito/static/js/main.75026648.chunk.js",
+    "main.js.map": "/avito/static/js/main.75026648.chunk.js.map",
     "runtime~main.js": "/avito/static/js/runtime~main.20751a04.js",
     "runtime~main.js.map": "/avito/static/js/runtime~main.20751a04.js.map",
     "static/js/2.7ac3102f.chunk.js": "/avito/static/js/2.7ac3102f.chunk.js",
     "static/js/2.7ac3102f.chunk.js.map": "/avito/static/js/2.7ac3102f.chunk.js.map",
     "index.html": "/avito/index.html",
-    "precache-manifest.6ac0e4ebfed45739fe187632a6256ef8.js": "/avito/precache-manifest.6ac0e4ebfed45739fe187632a6256ef8.js",
+    "precache-manifest.b843b1eb0ec45222dca83dc05e4c5a7d.js": "/avito/precache-manifest.b843b1eb0ec45222dca83dc05e4c5a7d.js",
     "service-worker.js": "/avito/service-worker.js",
     "static/css/main.eb020a0b.chunk.css.map": "/avito/static/css/main.eb020a0b.chunk.css.map"
   }

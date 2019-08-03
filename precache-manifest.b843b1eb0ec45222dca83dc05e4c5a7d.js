@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e13db9a80e8c3ec67b95c7857c3c9081",
+    "revision": "87b54fb50de673e8a5818b2705891330",
     "url": "/avito/index.html"
   },
   {
-    "revision": "52e8df1f8ed8b6c7d6dc",
+    "revision": "db3cc9aaeea5429fee35",
     "url": "/avito/static/css/main.eb020a0b.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/avito/static/js/2.7ac3102f.chunk.js"
   },
   {
-    "revision": "52e8df1f8ed8b6c7d6dc",
-    "url": "/avito/static/js/main.269a511b.chunk.js"
+    "revision": "db3cc9aaeea5429fee35",
+    "url": "/avito/static/js/main.75026648.chunk.js"
   },
   {
     "revision": "f51a4b2a72bafe583956",
