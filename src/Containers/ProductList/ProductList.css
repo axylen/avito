@@ -4,3 +4,9 @@
 
   list-style: none;
 }
+
+@media (max-width: 800px) {
+  .product-list {
+    padding: 0;
+  }
+}

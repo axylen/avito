@@ -14,7 +14,7 @@
   height: 45px;
   padding: 10px;
 
-  border: 2px solid rgba(51, 51, 51, .5);
+  border: 2px solid rgba(51, 51, 51, 0.5);
   border-radius: 5px;
 }
 
@@ -46,4 +46,33 @@
 
 .filter__order {
   margin-left: auto;
+}
+
+@media (max-width: 800px) {
+  .filters {
+    margin: 20px auto 30px;
+    max-width: 500px;
+  }
+
+  .filter-group {
+    margin: 10px 15px;
+  }
+
+  .filter-input {
+    width: 220px;
+    padding: 5px 10px;
+    height: 35px;
+  }
+
+  .filter-input--min-price,
+  .filter-input--max-price {
+    width: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
 }

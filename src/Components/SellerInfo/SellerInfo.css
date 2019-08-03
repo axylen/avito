@@ -36,3 +36,31 @@
 .seller-info__name {
   margin: 0;
 }
+
+@media (max-width: 600px) {
+  .seller {
+    flex-direction: column;
+
+    margin: 0 auto;
+  }
+
+  .seller-info {
+    flex-direction: column;
+
+    margin: 0;
+
+    text-align: center;
+  }
+
+  .seller-info__company,
+  .seller-info__name {
+    margin: 0 5px;
+  }
+  .seller-info__company {
+    font-size: 12px;
+  }
+
+  .seller__rating {
+    margin: 5px 0;
+  }
+}

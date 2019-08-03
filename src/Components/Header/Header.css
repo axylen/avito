@@ -61,11 +61,17 @@
   height: 20px;
   margin-right: 10px;
 
-  opacity: 0.5;
+  opacity: .5;
 
   fill: currentColor;
 }
 
 .header__heart-icon--active {
   fill: var(--color-red);
+}
+
+@media (max-width: 600px) {
+  .header__avito-icon {
+    width: 130px;
+  }
 }
