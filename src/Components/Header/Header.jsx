@@ -20,7 +20,7 @@ export default function Header({ setFavoritesOnly, favoritesOnly }) {
         </button>
         <button className="header__favorites" onClick={() => setShowFavorites(true)}>
           <svg
-            width="20"
+            width="21"
             height="20"
             className={favoritesClasses.join(' ')}
             xmlns="http://www.w3.org/2000/svg">
