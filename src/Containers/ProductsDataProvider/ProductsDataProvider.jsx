@@ -3,7 +3,7 @@ import ProductList from 'Containers/ProductList/ProductList';
 
 const favoritesContext = React.createContext();
 
-export default function ProductsDataProvider(props) {
+export default function ProductsDataProvider({ filter, favoritesOnly }) {
   const [productList, setProductList] = useState([]);
   const [productListFavorites, setProductListFavorites] = useState([]);
 
@@ -24,7 +24,7 @@ export default function ProductsDataProvider(props) {
     fetch('//avito.dump.academy/products')
       .then(res => res.json())
       .then(({ data }) => {
-        setProductList(data.slice(0, 5));
+        setProductList(data);
       });
   }, []);
 
@@ -52,14 +52,24 @@ export default function ProductsDataProvider(props) {
 
   let products = productList;
 
-  if (props.filter.favoritesOnly) {
+  if (favoritesOnly) {
     products = products.filter(product => productListFavorites.includes(product.id));
+  }
+
+  if (filter.category !== 'any') {
+    products = products.filter(product => product.category === filter.category);
+  }
+  if (filter.minPrice !== '') {
+    products = products.filter(product => product.price >= filter.minPrice);
+  }
+  if (filter.maxPrice !== '') {
+    products = products.filter(product => product.price <= filter.maxPrice);
   }
 
   return (
     <favoritesContext.Provider
       value={{ favorites: productListFavorites, addToFavorites, removeFromFavorites }}>
-      <ProductList products={products} />
+      <ProductList products={products.slice(0, 5)} />
     </favoritesContext.Provider>
   );
 }

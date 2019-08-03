@@ -1,0 +1,49 @@
+.filters {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+
+  margin: 40px 0 30px;
+}
+
+.input-label {
+  margin: 0 5px 5px;
+}
+
+.filter-input {
+  height: 45px;
+  padding: 10px;
+
+  border: 2px solid rgba(51, 51, 51, .5);
+  border-radius: 5px;
+}
+
+.filter-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.filter-group {
+  display: flex;
+
+  margin: 0 15px;
+}
+
+.filter-input--min-price {
+  width: 110px;
+
+  border-right-width: 1px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.filter-input--max-price {
+  width: 110px;
+
+  border-left-width: 1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.filter__order {
+  margin-left: auto;
+}

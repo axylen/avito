@@ -19,8 +19,13 @@ body {
 
 input,
 button,
+select,
 textarea {
   font: inherit;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .visually-hidden {

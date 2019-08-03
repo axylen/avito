@@ -2,21 +2,25 @@ import React, { useState } from 'react';
 import 'App.css';
 import Header from 'Components/Header/Header';
 import ProductsDataProvider from 'Containers/ProductsDataProvider/ProductsDataProvider';
+import Filters from 'Components/Filters/Filters';
 
 function App() {
   const [filter, setFilter] = useState({
-    category: undefined,
-    minPrice: undefined,
-    maxPrice: undefined,
-    favoritesOnly: false,
+    category: 'any',
+    minPrice: '',
+    maxPrice: '',
+    order: 'rating',
   });
+
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
 
   return (
     <>
-      <Header favoritesOnly={filter.favoritesOnly} setFilter={setFilter} />
+      <Header favoritesOnly={favoritesOnly} setFavoritesOnly={setFavoritesOnly} />
       <main className="main-containers">
         <h1 className="visually-hidden">Объявления Авито</h1>
-        <ProductsDataProvider filter={filter} />
+        <Filters filter={filter} setFilter={setFilter} />
+        <ProductsDataProvider filter={filter} favoritesOnly={favoritesOnly} />
       </main>
     </>
   );
