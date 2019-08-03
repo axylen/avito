@@ -44,7 +44,9 @@ export default function Product({ data }) {
             <use href="icons.svg#icon-heart" />
           </svg>
         </button>
-        <div className="product__images-count">{imagesCount === 0 ? null : `+${imagesCount}`}</div>
+        <div className="product__images-count" title={`Дополнительных фото: ${imagesCount}`}>
+          {imagesCount === 0 ? null : `+${imagesCount}`}
+        </div>
       </div>
       <div className="product__info">
         <h2 className="product__title">{title}</h2>
