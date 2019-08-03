@@ -1,20 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import './Product.css';
 import SellerInfo from 'Components/SellerInfo/SellerInfo';
 import { favoritesContext } from 'Containers/ProductsDataProvider/ProductsDataProvider';
 
 export default function Product({ data }) {
-  const [sellerData, setSellerData] = useState({});
-  const sellerId = data.relationships.seller;
+  const sellerData = data.seller;
   const { favorites, addToFavorites, removeFromFavorites } = useContext(favoritesContext);
-
-  useEffect(() => {
-    fetch(`//avito.dump.academy/sellers/${sellerId}`)
-      .then(res => res.json())
-      .then(({ data }) => {
-        setSellerData(data);
-      });
-  }, [sellerId]);
 
   const image = data.pictures[0];
   const imagesCount = data.pictures.length - 1;

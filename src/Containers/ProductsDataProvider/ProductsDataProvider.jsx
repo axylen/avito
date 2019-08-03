@@ -21,11 +21,24 @@ export default function ProductsDataProvider({ filter, favoritesOnly }) {
   };
 
   useEffect(() => {
-    fetch('//avito.dump.academy/products')
-      .then(res => res.json())
-      .then(({ data }) => {
-        setProductList(data);
+    (async function() {
+      const [productsRes, sellersRes] = await Promise.all([
+        fetch('//avito.dump.academy/products').then(res => res.json()),
+        fetch('//avito.dump.academy/sellers').then(res => res.json()),
+      ]);
+
+      const sellers = {};
+      sellersRes.data.forEach(seller => {
+        sellers[seller.id] = seller;
       });
+
+      const products = productsRes.data.map(product => {
+        const sellerId = product.relationships.seller;
+        return { ...product, seller: sellers[sellerId] };
+      });
+
+      setProductList(products);
+    })();
   }, []);
 
   useEffect(() => {
@@ -66,10 +79,18 @@ export default function ProductsDataProvider({ filter, favoritesOnly }) {
     products = products.filter(product => product.price <= filter.maxPrice);
   }
 
+  products = products.sort((a, b) => {
+    if (filter.order === 'rating') return b.seller.rating - a.seller.rating;
+
+    if (a.price === undefined) return 1;
+    if (b.price === undefined) return -1;
+    return a.price - b.price;
+  });
+
   return (
     <favoritesContext.Provider
       value={{ favorites: productListFavorites, addToFavorites, removeFromFavorites }}>
-      <ProductList products={products.slice(0, 5)} />
+      <ProductList products={products} />
     </favoritesContext.Provider>
   );
 }
