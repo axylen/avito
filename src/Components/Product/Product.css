@@ -7,6 +7,8 @@
 .product__image-group {
   position: relative;
 
+  flex-shrink: 0;
+
   width: 300px;
   height: 200px;
 }
@@ -59,14 +61,14 @@
   display: flex;
   flex-direction: column;
 
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .product__title {
   font-size: 20px;
   font-weight: 400;
 
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0;
 
   color: var(--color-primary);
 }
@@ -79,7 +81,7 @@
   font-size: 18px;
   font-weight: bold;
 
-  margin: 5px 0 5px 10px;
+  margin: 5px 0;
 }
 
 @media (max-width: 600px) {
