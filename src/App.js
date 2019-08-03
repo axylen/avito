@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'App.css';
 import Header from 'Components/Header/Header';
 import ProductsDataProvider from 'Containers/ProductsDataProvider/ProductsDataProvider';
 
@@ -13,8 +14,10 @@ function App() {
   return (
     <>
       <Header favoritesOnly={filter.favoritesOnly} setFilter={setFilter} />
-
-      <ProductsDataProvider filter={filter} />
+      <main className="main-containers">
+        <h1 className="visually-hidden">Объявления Авито</h1>
+        <ProductsDataProvider filter={filter} />
+      </main>
     </>
   );
 }
