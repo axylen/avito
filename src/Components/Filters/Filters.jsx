@@ -1,46 +1,43 @@
 import React, { useState } from 'react';
 import './Filters.css';
 
+const fixPriceValues = filter => {
+  if (filter.minPrice === '' || filter.maxPrice === '') {
+    return filter;
+  }
+
+  if (filter.minPrice > filter.maxPrice) {
+    filter = { ...filter, minPrice: filter.maxPrice, maxPrice: filter.minPrice };
+    return filter;
+  }
+
+  return filter;
+};
+
 export default function Filters({ filter, setFilter }) {
   const [localFilter, setLocalFilter] = useState(filter);
 
-  const fixPriceValues = filter => {
-    if (filter.minPrice === '' || filter.maxPrice === '') {
-      return filter;
-    }
-
-    if (filter.minPrice > filter.maxPrice) {
-      filter = { ...filter, minPrice: filter.maxPrice, maxPrice: filter.minPrice };
-      setLocalFilter(filter);
-      return filter;
-    }
-
-    return filter;
+  const passFilter = e => {
+    e.preventDefault();
+    const filter = fixPriceValues(localFilter);
+    setLocalFilter(filter);
+    setFilter(filter);
   };
 
   const handleChange = e => {
     let { name, value, type } = e.target;
 
     if (type === 'number') {
-      value = +value || '';
-      if (value < 0) value = '';
+      value = parseInt(value);
+      if (isNaN(value) || value <= 0) value = '';
     }
 
     const newFilter = { ...localFilter, [name]: value };
 
-    setLocalFilter(oldVal => ({ ...oldVal, [name]: value }));
+    setLocalFilter(newFilter);
     if (type === 'select-one') {
       setFilter(newFilter);
     }
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    setFilter(fixPriceValues(localFilter));
-  };
-
-  const handleBlur = e => {
-    setFilter(fixPriceValues(localFilter));
   };
 
   const handleKeyPress = e => {
@@ -52,7 +49,7 @@ export default function Filters({ filter, setFilter }) {
 
   const { category, minPrice, maxPrice, order } = localFilter;
   return (
-    <form onSubmit={handleSubmit} className="filters">
+    <form onSubmit={passFilter} className="filters">
       <div className="filter-group">
         <label>
           <p className="input-label">Категория</p>
@@ -75,9 +72,9 @@ export default function Filters({ filter, setFilter }) {
             name="minPrice"
             placeholder="От"
             onChange={handleChange}
-            onBlur={handleBlur}
+            onBlur={passFilter}
             onKeyPress={handleKeyPress}
-            value={minPrice || ' '}
+            value={minPrice}
             min="0"
           />
         </label>
@@ -89,9 +86,9 @@ export default function Filters({ filter, setFilter }) {
             name="maxPrice"
             placeholder="До"
             onChange={handleChange}
-            onBlur={handleBlur}
+            onBlur={passFilter}
             onKeyPress={handleKeyPress}
-            value={maxPrice || ' '}
+            value={maxPrice}
             min="0"
           />
         </label>
