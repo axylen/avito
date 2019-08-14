@@ -18,6 +18,8 @@
   height: 100%;
 
   border-radius: 5px;
+  background-color: #ccc;
+  background-image: linear-gradient(-45deg, #cecece, #eee);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, .15);
 
   object-fit: cover;

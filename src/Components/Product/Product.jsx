@@ -34,7 +34,7 @@ export default function Product({ data }) {
   return (
     <div className="product">
       <div className="product__image-group">
-        <img src={pictures[0]} alt={title} className="product__image" />
+        <img src={pictures[0]} alt={title} className="product__image" loading="lazy" />
         <button className="product__favorites-btn" onClick={handleClick}>
           <svg width="20" height="20" className={heartClassNames.join(' ')}>
             <use href="icons.svg#icon-heart" />
