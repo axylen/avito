@@ -39,6 +39,9 @@ export default function Product({ data }) {
           <svg width="20" height="20" className={heartClassNames.join(' ')}>
             <use href="icons.svg#icon-heart" />
           </svg>
+          <span className="visually-hidden">
+            {isInFavorites ? 'Удалить из избранного' : 'Добавить в избранное'}
+          </span>
         </button>
         <div className="product__images-count" title={`Дополнительных фото: ${picturesCount}`}>
           {picturesCount === 0 ? null : `+${picturesCount}`}
