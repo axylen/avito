@@ -18,23 +18,30 @@
 
 .header__container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 
   max-width: 1000px;
   height: 100%;
   margin: 0 auto;
-  padding: 15px 20px;
+  padding: 0 20px;
 }
 
-.header__avito-btn {
+.header__btn {
   height: 100%;
   padding: 0;
 
   cursor: pointer;
+  transition: border-color .15s ease-in-out;
 
   border: none;
+  border-bottom: 2px solid transparent;
   background-color: transparent;
+}
+
+.header__btn:focus,
+.header__btn:hover {
+  border-color: var(--color-primary);
+  outline: none;
 }
 
 .header__avito-icon {
@@ -42,18 +49,11 @@
   height: 100%;
 }
 
-.header__favorites {
+.header__btn--favorites {
   font-size: 18px;
 
   display: flex;
   align-items: center;
-
-  padding: 0;
-
-  cursor: pointer;
-
-  border: none;
-  background-color: transparent;
 }
 
 .header__heart-icon {

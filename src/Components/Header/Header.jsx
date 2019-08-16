@@ -13,12 +13,16 @@ export default function Header({ setFavoritesOnly, favoritesOnly }) {
   return (
     <header className="header">
       <div className="header__container">
-        <button className="header__avito-btn" onClick={() => setShowFavorites(false)}>
+        <button className="header__btn" onClick={() => setShowFavorites(false)}>
           <svg className="header__avito-icon" xmlns="http://www.w3.org/2000/svg">
             <use href="icons.svg#icon-avito" />
           </svg>
+          <span className="visually-hidden">Авито</span>
         </button>
-        <button className="header__favorites" onClick={() => setShowFavorites(true)}>
+
+        <button
+          className="header__btn header__btn--favorites"
+          onClick={() => setShowFavorites(!favoritesOnly)}>
           <svg
             width="21"
             height="20"
