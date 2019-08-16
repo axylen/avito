@@ -47,16 +47,24 @@ const filterProducts = (products, filter, favorites, favoritesOnly) => {
 };
 
 const sortProducts = (products, orderBy) => {
-  if (orderBy === 'rating') {
-    return products.sort((a, b) => b.seller.rating - a.seller.rating);
-  }
-  if (orderBy === 'price') {
-    return products.sort((a, b) => {
+  const order = {
+    rating: (a, b) => {
+      const ratingDifference = b.seller.rating - a.seller.rating;
+      if (ratingDifference === 0) {
+        return order.price(a, b);
+      }
+      return ratingDifference;
+    },
+    price: (a, b) => {
       if (a.price === undefined) return 1;
       if (b.price === undefined) return -1;
       return a.price - b.price;
-    });
-  }
+    },
+  };
+
+  const sortFunction = order[orderBy];
+  if (sortFunction === undefined) return products;
+  return products.sort(sortFunction);
 };
 
 export default function ProductsDataProvider({ filter, favoritesOnly }) {
